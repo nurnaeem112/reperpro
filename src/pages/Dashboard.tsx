@@ -51,7 +51,7 @@ export default function Dashboard() {
                 <textarea 
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  className="w-full h-80 bg-surface-container-low rounded-2xl p-6 text-on-surface border border-white/5 focus:border-primary/30 focus:ring-0 transition-all resize-none text-lg leading-relaxed placeholder:text-on-surface-variant/30" 
+                  className="w-full h-80 bg-surface-container-low rounded-2xl p-6 text-on-surface border border-black/5 focus:border-primary/30 focus:ring-0 transition-all resize-none text-lg leading-relaxed placeholder:text-on-surface-variant/30" 
                   placeholder="Paste your idea, raw notes, or a long-form article here..."
                 />
                 
@@ -89,7 +89,7 @@ export default function Dashboard() {
                   <button 
                     onClick={handleGenerate}
                     disabled={isGenerating || !content}
-                    className="w-full py-5 rounded-full bg-white text-black font-bold text-lg flex items-center justify-center gap-3 shadow-xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50 disabled:hover:scale-100"
+                    className="w-full py-5 rounded-full bg-primary text-white font-bold text-lg flex items-center justify-center gap-3 shadow-xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50 disabled:hover:scale-100"
                   >
                     {isGenerating ? (
                       <>
@@ -108,8 +108,8 @@ export default function Dashboard() {
 
             {/* Output Area */}
             <section className="lg:col-span-7 space-y-6">
-              <div className="bg-surface-container/40 backdrop-blur-xl border border-white/5 rounded-4xl overflow-hidden flex flex-col min-h-[700px] shadow-2xl">
-                <div className="flex items-center px-8 pt-8 border-b border-white/5 gap-10">
+              <div className="bg-white border border-black/5 rounded-4xl overflow-hidden flex flex-col min-h-[700px] shadow-2xl">
+                <div className="flex items-center px-8 pt-8 border-b border-black/5 gap-10">
                   {['X Thread', 'LinkedIn', 'Reddit', 'Threads'].map(t => (
                     <button 
                       key={t} 
@@ -131,7 +131,7 @@ export default function Dashboard() {
                     <motion.div 
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="prose prose-invert max-w-none"
+                      className="prose max-w-none"
                     >
                       <div className="font-mono text-xs text-primary/50 mb-6 uppercase tracking-widest">Generated Output</div>
                       <div className="whitespace-pre-wrap font-sans text-on-surface text-lg leading-relaxed selection:bg-primary/30">
@@ -150,13 +150,13 @@ export default function Dashboard() {
                 </div>
 
                 {output && (
-                  <div className="p-8 bg-surface-container-low/50 border-t border-white/5">
+                  <div className="p-8 bg-surface-container-low/50 border-t border-black/5">
                     <div className="flex items-center justify-between">
                       <div className="flex gap-4">
-                        <button className="px-6 py-3 rounded-full bg-surface-container-highest text-white text-sm font-bold border border-white/5 hover:bg-white/5 transition-all flex items-center gap-2">
+                        <button className="px-6 py-3 rounded-full bg-surface-container-high text-on-surface text-sm font-bold border border-black/5 hover:bg-surface-container-highest transition-all flex items-center gap-2">
                           <Copy size={18} /> Copy All
                         </button>
-                        <button onClick={handleGenerate} className="px-6 py-3 rounded-full bg-surface-container-highest text-white text-sm font-bold border border-white/5 hover:bg-white/5 transition-all flex items-center gap-2">
+                        <button onClick={handleGenerate} className="px-6 py-3 rounded-full bg-surface-container-high text-on-surface text-sm font-bold border border-black/5 hover:bg-surface-container-highest transition-all flex items-center gap-2">
                           <RefreshCw size={18} /> Regenerate
                         </button>
                       </div>
@@ -199,12 +199,12 @@ function ToneButton({ active, onClick, title, desc }: any) {
       className={cn(
         "px-5 py-4 rounded-2xl border text-left transition-all group",
         active 
-          ? "bg-surface-container-highest text-primary border-primary/40 shadow-lg" 
-          : "bg-surface-container-low text-on-surface-variant border-white/5 hover:border-white/20"
+          ? "bg-primary/5 text-primary border-primary/40 shadow-sm" 
+          : "bg-surface-container-low text-on-surface-variant border-black/5 hover:border-black/20"
       )}
     >
-      <div className={cn("font-bold text-sm mb-1 transition-colors", active ? "text-white" : "text-on-surface")}>{title}</div>
-      <div className="text-[10px] opacity-40 font-medium uppercase tracking-wider">{desc}</div>
+      <div className={cn("font-bold text-sm mb-1 transition-colors", active ? "text-primary" : "text-on-surface")}>{title}</div>
+      <div className="text-[10px] opacity-60 font-medium uppercase tracking-wider">{desc}</div>
     </button>
   );
 }

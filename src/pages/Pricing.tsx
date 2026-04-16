@@ -11,7 +11,7 @@ export default function Pricing() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/5 backdrop-blur-md mb-8"
+          className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 backdrop-blur-md mb-8"
         >
           <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Simple, Transparent Pricing</span>
         </motion.div>
@@ -67,7 +67,7 @@ export default function Pricing() {
       {/* FAQ Section */}
       <section className="max-w-4xl mx-auto mt-48">
         <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl font-bold text-white mb-4">Common Questions</h2>
+          <h2 className="font-headline text-4xl font-bold text-on-surface mb-4">Common Questions</h2>
           <p className="text-on-surface-variant">Everything you need to know about RepurPro.</p>
         </div>
         <div className="space-y-4">
@@ -94,11 +94,11 @@ function PricingCard({ tier, price, description, features, buttonText, featured 
     <div className={cn(
       "p-10 rounded-5xl border flex flex-col transition-all duration-500 relative group",
       featured 
-        ? "bg-surface-container border-primary/50 shadow-2xl scale-105 z-10" 
-        : "bg-surface-container-low border-white/5 hover:border-white/20"
+        ? "bg-white border-primary/50 shadow-2xl scale-105 z-10" 
+        : "bg-surface-container-low border-black/5 hover:border-black/20"
     )}>
       {featured && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-bold px-6 py-1.5 rounded-full tracking-[0.2em] uppercase shadow-lg shadow-primary/20">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-6 py-1.5 rounded-full tracking-[0.2em] uppercase shadow-lg shadow-primary/20">
           MOST POPULAR
         </div>
       )}
@@ -113,7 +113,7 @@ function PricingCard({ tier, price, description, features, buttonText, featured 
       <ul className="space-y-5 mb-12 flex-grow">
         {features.map((f: any, i: number) => (
           <li key={i} className={cn("flex items-center gap-4 text-sm font-medium transition-opacity", !f.included && "opacity-30")}>
-            <div className={cn("w-5 h-5 rounded-full flex items-center justify-center", f.included ? "bg-primary/20 text-primary" : "bg-white/5 text-on-surface-variant")}>
+            <div className={cn("w-5 h-5 rounded-full flex items-center justify-center", f.included ? "bg-primary/20 text-primary" : "bg-black/5 text-on-surface-variant")}>
               {f.included ? <Check size={12} /> : <X size={12} />}
             </div>
             {f.text}
@@ -123,8 +123,8 @@ function PricingCard({ tier, price, description, features, buttonText, featured 
       <button className={cn(
         "w-full py-5 rounded-full font-bold transition-all text-lg",
         featured 
-          ? "bg-white text-black shadow-xl shadow-white/5 hover:scale-[1.02] active:scale-95" 
-          : "bg-surface-container-highest text-white border border-white/5 hover:bg-white/5 active:scale-95"
+          ? "bg-primary text-white shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95" 
+          : "bg-surface-container-high text-on-surface border border-black/5 hover:bg-surface-container-highest active:scale-95"
       )}>
         {buttonText}
       </button>
@@ -135,15 +135,15 @@ function PricingCard({ tier, price, description, features, buttonText, featured 
 function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <div className="bg-surface-container/40 backdrop-blur-md rounded-3xl border border-white/5 overflow-hidden transition-all hover:border-white/10">
+    <div className="bg-surface-container/40 backdrop-blur-md rounded-3xl border border-black/5 overflow-hidden transition-all hover:border-black/10">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-8 flex justify-between items-center text-left group"
       >
-        <h4 className="font-bold text-xl text-white group-hover:text-primary transition-colors">{question}</h4>
+        <h4 className="font-bold text-xl text-on-surface group-hover:text-primary transition-colors">{question}</h4>
         <motion.div 
           animate={{ rotate: isOpen ? 180 : 0 }}
-          className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"
+          className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center"
         >
           <ChevronDown className="w-5 h-5 opacity-50" />
         </motion.div>

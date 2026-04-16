@@ -5,19 +5,19 @@
   --font-headline: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-background: #050505;
-  --color-primary: #90abff;
-  --color-primary-dim: #316bf3;
-  --color-secondary: #9492ff;
-  --color-secondary-container: #3323cc;
-  --color-surface: #0e0e0e;
-  --color-surface-container: #121212;
-  --color-surface-container-low: #0a0a0a;
-  --color-surface-container-high: #1a1a1a;
-  --color-surface-container-highest: #222222;
-  --color-on-surface: #ffffff;
-  --color-on-surface-variant: #a1a1a1;
-  --color-outline-variant: #2a2a2a;
+  --color-background: #ffffff;
+  --color-primary: #2563eb;
+  --color-primary-dim: #1d4ed8;
+  --color-secondary: #7c3aed;
+  --color-secondary-container: #ede9fe;
+  --color-surface: #ffffff;
+  --color-surface-container: #f8fafc;
+  --color-surface-container-low: #f1f5f9;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container-highest: #cbd5e1;
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #64748b;
+  --color-outline-variant: #e2e8f0;
   
   --radius-4xl: 2rem;
   --radius-5xl: 3rem;
@@ -25,33 +25,33 @@
 
 @layer base {
   body {
-    @apply bg-background text-on-surface font-sans antialiased selection:bg-primary/30 selection:text-primary;
+    @apply bg-background text-on-surface font-sans antialiased selection:bg-primary/10 selection:text-primary;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tight;
+    @apply font-headline tracking-tight text-on-surface;
   }
 }
 
 @layer components {
   .glass-panel {
-    @apply bg-surface-container/40 backdrop-blur-xl border border-white/5 shadow-2xl;
+    @apply bg-white/70 backdrop-blur-xl border border-black/5 shadow-xl;
   }
   
   .hero-glow {
-    background: radial-gradient(circle at 50% 50%, rgba(144, 171, 255, 0.1) 0%, rgba(51, 35, 204, 0.03) 50%, transparent 100%);
+    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.02) 50%, transparent 100%);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-secondary;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary-dim to-secondary;
   }
   
   .btn-primary {
-    @apply bg-white text-black font-bold px-8 py-3 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-white/10 flex items-center gap-2;
+    @apply bg-primary text-white font-bold px-8 py-3 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20 flex items-center gap-2;
   }
   
   .btn-secondary {
-    @apply bg-surface-container-highest text-white font-bold px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 active:scale-95 transition-all duration-300 flex items-center gap-2;
+    @apply bg-surface-container-low text-on-surface font-bold px-8 py-3 rounded-full border border-black/5 hover:bg-surface-container-high active:scale-95 transition-all duration-300 flex items-center gap-2;
   }
 }
 

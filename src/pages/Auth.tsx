@@ -10,7 +10,7 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
       
       <div className="w-full max-w-md z-10">
         <div className="text-center mb-12">
-          <Link to="/" className="text-4xl font-bold tracking-tighter text-white group">
+          <Link to="/" className="text-4xl font-bold tracking-tighter text-on-surface group">
             Repur<span className="text-primary group-hover:text-secondary transition-colors">Pro</span>
           </Link>
           <p className="text-on-surface-variant mt-4 text-lg font-medium">Join the digital renaissance.</p>
@@ -19,11 +19,11 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-surface-container/40 backdrop-blur-2xl border border-white/5 p-10 md:p-12 rounded-5xl shadow-2xl relative"
+          className="bg-white border border-black/5 p-10 md:p-12 rounded-5xl shadow-2xl relative"
         >
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 blur-3xl -z-10"></div>
           
-          <h1 className="text-3xl font-bold mb-10 tracking-tight text-white">
+          <h1 className="text-3xl font-bold mb-10 tracking-tight text-on-surface">
             {mode === 'signup' ? 'Create Account' : 'Welcome Back'}
           </h1>
           
@@ -32,8 +32,8 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
               <div className="space-y-3">
                 <label className="block text-[10px] font-bold text-on-surface-variant tracking-[0.2em] uppercase ml-4">Full Name</label>
                 <div className="relative group">
-                  <User className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-primary transition-colors w-5 h-5" />
-                  <input className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 pl-16 pr-6 text-on-surface focus:ring-2 focus:ring-primary/50 outline-none transition-all placeholder:text-white/10" placeholder="Alex Sterling" />
+                  <User className="absolute left-6 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors w-5 h-5" />
+                  <input className="w-full bg-surface-container-low border border-black/5 rounded-2xl py-5 pl-16 pr-6 text-on-surface focus:ring-2 focus:ring-primary/50 outline-none transition-all placeholder:text-on-surface-variant/30" placeholder="Alex Sterling" />
                 </div>
               </div>
             )}
@@ -41,8 +41,8 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
             <div className="space-y-3">
               <label className="block text-[10px] font-bold text-on-surface-variant tracking-[0.2em] uppercase ml-4">Email Address</label>
               <div className="relative group">
-                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-primary transition-colors w-5 h-5" />
-                <input className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 pl-16 pr-6 text-on-surface focus:ring-2 focus:ring-primary/50 outline-none transition-all placeholder:text-white/10" placeholder="alex@celestial.ai" />
+                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors w-5 h-5" />
+                <input className="w-full bg-surface-container-low border border-black/5 rounded-2xl py-5 pl-16 pr-6 text-on-surface focus:ring-2 focus:ring-primary/50 outline-none transition-all placeholder:text-on-surface-variant/30" placeholder="alex@celestial.ai" />
               </div>
             </div>
 
@@ -52,9 +52,9 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
                 {mode === 'login' && <Link to="#" className="text-[10px] text-primary hover:underline font-bold tracking-wider uppercase">Forgot?</Link>}
               </div>
               <div className="relative group">
-                <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-primary transition-colors w-5 h-5" />
-                <input className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 pl-16 pr-14 text-on-surface focus:ring-2 focus:ring-primary/50 outline-none transition-all placeholder:text-white/10" type="password" placeholder="••••••••" />
-                <button type="button" className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20 hover:text-white transition-colors">
+                <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors w-5 h-5" />
+                <input className="w-full bg-surface-container-low border border-black/5 rounded-2xl py-5 pl-16 pr-14 text-on-surface focus:ring-2 focus:ring-primary/50 outline-none transition-all placeholder:text-on-surface-variant/30" type="password" placeholder="••••••••" />
+                <button type="button" className="absolute right-6 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors">
                   <Eye size={20} />
                 </button>
               </div>
@@ -76,17 +76,17 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
               </div>
             )}
 
-            <button className="w-full bg-primary text-on-surface-variant font-bold py-6 rounded-full shadow-2xl shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all text-lg">
+            <button className="w-full bg-primary text-white font-bold py-6 rounded-full shadow-2xl shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all text-lg">
               {mode === 'signup' ? 'Create Account' : 'Sign In'}
             </button>
           </form>
 
           <div className="relative my-10">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/5"></div>
+              <div className="w-full border-t border-black/5"></div>
             </div>
             <div className="relative flex justify-center text-[10px]">
-              <span className="px-6 bg-surface-container-low text-on-surface-variant font-bold tracking-[0.2em] uppercase">OR</span>
+              <span className="px-6 bg-white text-on-surface-variant font-bold tracking-[0.2em] uppercase">OR</span>
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
 
         <p className="text-center mt-10 text-on-surface-variant text-lg">
           {mode === 'signup' ? 'Already have an account?' : "Don't have an account?"}
-          <Link to={mode === 'signup' ? '/login' : '/signup'} className="text-primary font-bold hover:text-white transition-colors ml-2 underline underline-offset-8 decoration-primary/30 hover:decoration-white">
+          <Link to={mode === 'signup' ? '/login' : '/signup'} className="text-primary font-bold hover:text-on-surface transition-colors ml-2 underline underline-offset-8 decoration-primary/30 hover:decoration-on-surface">
             {mode === 'signup' ? 'Sign In' : 'Sign Up'}
           </Link>
         </p>
@@ -109,7 +109,7 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
 
 function SocialButton({ icon, label }: any) {
   return (
-    <button className="flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white text-sm font-bold py-4 rounded-2xl border border-white/5 hover:border-white/10 transition-all group">
+    <button className="flex items-center justify-center gap-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-sm font-bold py-4 rounded-2xl border border-black/5 hover:border-black/10 transition-all group">
       {typeof icon === 'string' ? <img src={icon} className="w-5 h-5 group-hover:scale-110 transition-transform" alt={label} referrerPolicy="no-referrer" /> : icon}
       {label}
     </button>

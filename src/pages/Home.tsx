@@ -14,7 +14,7 @@ export default function Home() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center px-4 py-1.5 rounded-full bg-surface-container-highest/30 border border-white/5 backdrop-blur-md mb-8"
+          className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 backdrop-blur-md mb-8"
         >
           <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Powered by Gemini 3.1 Pro</span>
         </motion.div>
@@ -46,7 +46,7 @@ export default function Home() {
           className="w-full max-w-3xl relative group"
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-          <div className="relative bg-surface-container/60 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-5 flex flex-col gap-4 shadow-2xl">
+          <div className="relative bg-white/80 backdrop-blur-2xl border border-black/5 rounded-[2.5rem] p-5 flex flex-col gap-4 shadow-2xl">
             <div className="flex items-start gap-4 px-4 pt-2">
               <Sparkles className="text-primary mt-1 w-6 h-6" />
               <textarea 
@@ -59,9 +59,10 @@ export default function Home() {
                 <PlatformChip icon={<Twitter size={14} />} label="X Thread" />
                 <PlatformChip icon={<Linkedin size={14} />} label="LinkedIn" />
                 <PlatformChip icon={<MessageSquare size={14} />} label="Reddit" />
-                <PlatformChip icon={<AtSign size={14} />} label="Threads" />
+                <AtSign size={14} className="text-on-surface-variant" />
+                <span className="text-[11px] font-bold tracking-widest text-on-surface-variant">Threads</span>
               </div>
-              <Link to="/dashboard" className="bg-white text-black font-bold py-3 px-8 rounded-full hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-lg shadow-white/5">
+              <Link to="/dashboard" className="btn-primary">
                 Generate <ArrowRight size={18} />
               </Link>
             </div>
@@ -79,9 +80,9 @@ export default function Home() {
             <p className="text-on-surface-variant text-lg">Turn one idea into content for every platform — without rewriting or wasting time.</p>
           </div>
           <div className="flex gap-4">
-            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-on-surface-variant">01</div>
-            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-on-surface-variant">02</div>
-            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-on-surface-variant">03</div>
+            <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-on-surface-variant">01</div>
+            <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-on-surface-variant">02</div>
+            <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-on-surface-variant">03</div>
           </div>
         </div>
         
@@ -107,15 +108,15 @@ export default function Home() {
       {/* Bento Grid Features */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[700px]">
-          <div className="md:col-span-2 md:row-span-2 bg-surface-container p-12 rounded-5xl flex flex-col justify-end border border-white/5 relative overflow-hidden group">
+          <div className="md:col-span-2 md:row-span-2 bg-surface-container p-12 rounded-5xl flex flex-col justify-end border border-black/5 relative overflow-hidden group">
             <img 
               src="https://picsum.photos/seed/tech/1200/800" 
-              className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-110 transition-transform duration-1000" 
+              className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover:scale-110 transition-transform duration-1000" 
               alt="AI Background"
               referrerPolicy="no-referrer"
             />
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                 <Brain className="text-primary" />
               </div>
               <h3 className="font-headline font-bold text-4xl mb-4">Intelligent AI Repurposing</h3>
@@ -123,7 +124,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="md:col-span-2 bg-primary-dim p-12 rounded-5xl text-white flex flex-col justify-between relative overflow-hidden">
+          <div className="md:col-span-2 bg-primary p-12 rounded-5xl text-white flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
             <Sparkles size={48} />
             <div>
@@ -132,7 +133,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-surface-container-high p-10 rounded-5xl flex flex-col justify-between border border-white/5">
+          <div className="bg-surface-container-low p-10 rounded-5xl flex flex-col justify-between border border-black/5">
             <Clock className="text-primary" size={32} />
             <div>
               <h3 className="font-headline font-bold text-2xl mb-2">Smart Scheduling</h3>
@@ -140,7 +141,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-surface-container-highest p-10 rounded-5xl flex flex-col justify-between border border-white/5">
+          <div className="bg-surface-container-high p-10 rounded-5xl flex flex-col justify-between border border-black/5">
             <BarChart3 className="text-secondary" size={32} />
             <div>
               <h3 className="font-headline font-bold text-2xl mb-2">Performance</h3>
@@ -157,7 +158,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/5 backdrop-blur-md mb-8"
+            className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 backdrop-blur-md mb-8"
           >
             <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Simple, Transparent Pricing</span>
           </motion.div>
@@ -260,7 +261,7 @@ export default function Home() {
 
 function PlatformChip({ icon, label }: { icon: React.ReactNode, label: string }) {
   return (
-    <span className="bg-white/5 px-4 py-2 rounded-full text-[11px] font-bold tracking-widest text-on-surface-variant flex items-center gap-2 border border-white/5 hover:bg-white/10 transition-colors cursor-default">
+    <span className="bg-black/5 px-4 py-2 rounded-full text-[11px] font-bold tracking-widest text-on-surface-variant flex items-center gap-2 border border-black/5 hover:bg-black/10 transition-colors cursor-default">
       {icon} {label}
     </span>
   );
@@ -268,9 +269,9 @@ function PlatformChip({ icon, label }: { icon: React.ReactNode, label: string })
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
-    <div className="bg-surface-container-low p-12 rounded-5xl relative group overflow-hidden border border-white/5 hover:border-primary/20 transition-all duration-500">
+    <div className="bg-surface-container-low p-12 rounded-5xl relative group overflow-hidden border border-black/5 hover:border-primary/20 transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div className="w-16 h-16 bg-surface-container-highest rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+      <div className="w-16 h-16 bg-surface-container-high rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
         {React.cloneElement(icon as React.ReactElement, { size: 32 })}
       </div>
       <h3 className="font-headline font-bold text-3xl mb-4">{title}</h3>
@@ -325,12 +326,12 @@ function PricingCard({ tier, price, description, features, buttonText, featured 
 function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <div className="bg-surface-container/40 backdrop-blur-md rounded-3xl border border-white/5 overflow-hidden transition-all hover:border-white/10">
+    <div className="bg-surface-container/40 backdrop-blur-md rounded-3xl border border-black/5 overflow-hidden transition-all hover:border-black/10">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-8 flex justify-between items-center text-left group"
       >
-        <h4 className="font-bold text-xl text-white group-hover:text-primary transition-colors">{question}</h4>
+        <h4 className="font-bold text-xl text-on-surface group-hover:text-primary transition-colors">{question}</h4>
         <motion.div 
           animate={{ rotate: isOpen ? 180 : 0 }}
           className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"

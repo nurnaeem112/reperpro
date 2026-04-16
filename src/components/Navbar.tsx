@@ -10,11 +10,11 @@ export function Navbar() {
   if (location.pathname === '/login' || location.pathname === '/signup') return null;
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/40 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed top-0 w-full z-50 bg-background/40 backdrop-blur-xl border-b border-black/5">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
-        <Link to="/" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2 group">
+        <Link to="/" className="text-2xl font-bold tracking-tighter text-on-surface flex items-center gap-2 group">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform">
-            <div className="w-4 h-4 bg-black rounded-sm"></div>
+            <div className="w-4 h-4 bg-white rounded-sm"></div>
           </div>
           RepurPro
         </Link>
@@ -27,8 +27,8 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-6">
-          <Link to="/login" className="text-on-surface-variant hover:text-white font-medium text-sm transition-colors">Login</Link>
-          <Link to="/signup" className="bg-white text-black font-bold px-5 py-2 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 text-sm">
+          <Link to="/login" className="text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Login</Link>
+          <Link to="/signup" className="bg-primary text-white font-bold px-5 py-2 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 text-sm shadow-lg shadow-primary/20">
             Start Free
           </Link>
         </div>
@@ -43,7 +43,7 @@ function NavLink({ to, children, active }: { to: string, children: React.ReactNo
       to={to} 
       className={cn(
         "relative py-1 transition-colors", 
-        active ? "text-white" : "text-on-surface-variant hover:text-white"
+        active ? "text-on-surface" : "text-on-surface-variant hover:text-on-surface"
       )}
     >
       {children}
